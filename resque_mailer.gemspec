@@ -44,6 +44,7 @@ Gem::Specification.new do |s|
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
       s.add_runtime_dependency(%q<resque>, [">= 1.2.3"])
       s.add_runtime_dependency(%q<actionmailer>, [">= 3.0.0"])
+      s.add_runtime_dependency(%q<resque_scheduler>, [">= 1.9.9"])
       s.add_development_dependency(%q<rspec>, [">= 2.6.0"])
       s.add_development_dependency(%q<yard>, [">= 0.6.0"])
       s.add_development_dependency(%q<bundler>, ["~> 1.0.0"])

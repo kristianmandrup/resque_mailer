@@ -5,6 +5,7 @@ source 'http://rubygems.org'
 #   gem 'activesupport', '>= 2.3.5'
 
 gem 'resque', '>= 1.2.3'
+gem 'resque-scheduler', '>=1.9.9'
 gem 'actionmailer', '>= 3.0.0'
 
 # Add dependencies to develop your gem here.
