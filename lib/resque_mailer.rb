@@ -31,7 +31,8 @@ module Resque
           super.tap do |resque_mail|
             resque_mail.class_eval do
               define_method(:deliver) do
-                resque.enqueue(mailer_class, method_name, *args)
+                time = args.shift
+                resque.enqueue_in(time=5, mailer_class, method_name, *args)
                 self
               end
             end
