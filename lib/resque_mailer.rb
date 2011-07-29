@@ -30,7 +30,12 @@ module Resque
           mailer_class = self
           super.tap do |resque_mail|
             resque_mail.class_eval do
-              define_method(:deliver) do |time=5|
+              define_method(:deliver) do
+                resque.enqueue(mailer_class, method_name, *args)
+                self
+              end
+
+              define_method(:deliver_in) do |time|
                 resque.enqueue_in(time, mailer_class, method_name, *args)
                 self
               end
